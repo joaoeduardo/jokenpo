@@ -8,7 +8,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('rock', 'rock');
+        $winner = $judge->whoWin(Option::rock(), Option::rock());
 
         $this->assertEquals(Player::NONE, $winner);
     }
@@ -17,7 +17,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('paper', 'paper');
+        $winner = $judge->whoWin(Option::paper(), Option::paper());
 
         $this->assertEquals(Player::NONE, $winner);
     }
@@ -26,7 +26,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('scissors', 'scissors');
+        $winner = $judge->whoWin(Option::scissors(), Option::scissors());
 
         $this->assertEquals(Player::NONE, $winner);
     }
@@ -35,7 +35,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('scissors', 'paper');
+        $winner = $judge->whoWin(Option::scissors(), Option::paper());
 
         $this->assertEquals(Player::PLAYER_1, $winner);
     }
@@ -44,7 +44,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('scissors', 'rock');
+        $winner = $judge->whoWin(Option::scissors(), Option::rock());
 
         $this->assertEquals(Player::PLAYER_2, $winner);
     }
@@ -53,7 +53,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('paper', 'scissors');
+        $winner = $judge->whoWin(Option::paper(), Option::scissors());
 
         $this->assertEquals(Player::PLAYER_2, $winner);
     }
@@ -62,7 +62,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('paper', 'rock');
+        $winner = $judge->whoWin(Option::paper(), Option::rock());
 
         $this->assertEquals(Player::PLAYER_1, $winner);
     }
@@ -71,7 +71,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('rock', 'paper');
+        $winner = $judge->whoWin(Option::rock(), Option::paper());
 
         $this->assertEquals(Player::PLAYER_2, $winner);
     }
@@ -80,7 +80,7 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin('rock', 'scissors');
+        $winner = $judge->whoWin(Option::rock(), Option::scissors());
 
         $this->assertEquals(Player::PLAYER_1, $winner);
     }
