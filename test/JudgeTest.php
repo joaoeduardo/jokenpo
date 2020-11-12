@@ -141,3 +141,33 @@ class Player
     const PLAYER_1 = 1;
     const PLAYER_2 = 2;
 }
+
+class Option
+{
+    private string $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function rock()
+    {
+        return new self('rock');
+    }
+
+    public static function paper()
+    {
+        return new self('paper');
+    }
+
+    public static function scissors()
+    {
+        return new self('scissors');
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+}
