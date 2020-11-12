@@ -84,6 +84,15 @@ class JudgeTest extends TestCase
 
         $this->assertEquals(Player::PLAYER_1, $winner);
     }
+
+    public function testBothPlayersEmpty()
+    {
+        $judge = new Judge();
+
+        $winner = $judge->whoWin('', '');
+
+        $this->assertEquals(Player::NONE, $winner);
+    }
 }
 
 class Judge
