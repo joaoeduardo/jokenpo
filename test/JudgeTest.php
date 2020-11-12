@@ -91,6 +91,8 @@ class Judge
             return Player::PLAYER_2;
         } else if ($player1 === 'paper' && $player2 === 'rock') {
             return Player::PLAYER_1;
+        } else if ($player1 === 'rock' && $player2 === 'paper') {
+            return Player::PLAYER_2;
         }
     }
 }
