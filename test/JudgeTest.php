@@ -22,7 +22,7 @@ class JudgeTest extends TestCase
         $this->assertEquals(Player::NONE, $winner);
     }
 
-    public function testScissorsTieWithscissors()
+    public function testScissorsTieWithScissors()
     {
         $judge = new Judge();
 
