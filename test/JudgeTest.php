@@ -12,6 +12,15 @@ class JudgeTest extends TestCase
 
         $this->assertEquals(0, $winner);
     }
+
+    public function testPaperTieWithPaper()
+    {
+        $judge = new Judge();
+
+        $winner = $judge->whoWin('paper', 'paper');
+
+        $this->assertEquals(0, $winner);
+    }
 }
 
 class Judge
