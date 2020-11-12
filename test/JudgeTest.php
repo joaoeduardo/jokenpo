@@ -10,7 +10,7 @@ class JudgeTest extends TestCase
 
         $winner = $judge->whoWin('rock', 'rock');
 
-        $this->assertEquals(0, $winner);
+        $this->assertEquals(Player::NONE, $winner);
     }
 
     public function testPaperTieWithPaper()
@@ -19,7 +19,7 @@ class JudgeTest extends TestCase
 
         $winner = $judge->whoWin('paper', 'paper');
 
-        $this->assertEquals(0, $winner);
+        $this->assertEquals(Player::NONE, $winner);
     }
 
     public function testScissorsTieWithscissors()
@@ -28,7 +28,7 @@ class JudgeTest extends TestCase
 
         $winner = $judge->whoWin('scissors', 'scissors');
 
-        $this->assertEquals(0, $winner);
+        $this->assertEquals(Player::NONE, $winner);
     }
 
     public function testScissorsWinsPaper()
@@ -37,7 +37,7 @@ class JudgeTest extends TestCase
 
         $winner = $judge->whoWin('scissors', 'paper');
 
-        $this->assertEquals(1, $winner);
+        $this->assertEquals(Player::PLAYER_1, $winner);
     }
 }
 
@@ -45,6 +45,13 @@ class Judge
 {
     public function whoWin(string $player1, string $player2): int
     {
-        return 0;
+        return Player::NONE;
     }
+}
+
+class Player
+{
+    const NONE = 0;
+    const PLAYER_1 = 1;
+    const PLAYER_2 = 2;
 }
