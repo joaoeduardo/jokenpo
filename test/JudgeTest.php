@@ -117,9 +117,7 @@ class Judge
 {
     public function whoWin(string $player1, string $player2): int
     {
-        if ($player1 === $player2) {
-            return Player::NONE;
-        } else if ($player1 === 'scissors' && $player2 === 'paper') {
+        if ($player1 === 'scissors' && $player2 === 'paper') {
             return Player::PLAYER_1;
         } else if ($player1 === 'scissors' && $player2 === 'rock') {
             return Player::PLAYER_2;
@@ -132,6 +130,8 @@ class Judge
         } else if ($player1 === 'rock' && $player2 === 'scissors') {
             return Player::PLAYER_1;
         }
+
+        return Player::NONE;
     }
 }
 
