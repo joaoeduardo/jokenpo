@@ -13,3 +13,11 @@ class JudgeTest extends TestCase
         $this->assertEquals(0, $winner);
     }
 }
+
+class Judge
+{
+    public function whoWin(string $player1, string $player2): int
+    {
+        return 0;
+    }
+}
