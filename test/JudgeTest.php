@@ -115,19 +115,19 @@ class JudgeTest extends TestCase
 
 class Judge
 {
-    public function whoWin(string $player1, string $player2): int
+    public function whoWin(Option $player1, Option $player2): int
     {
-        if ($player1 === 'scissors' && $player2 === 'paper') {
+        if ($player1->getValue() === 'scissors' && $player2->getValue() === 'paper') {
             return Player::PLAYER_1;
-        } else if ($player1 === 'scissors' && $player2 === 'rock') {
+        } else if ($player1->getValue() === 'scissors' && $player2->getValue() === 'rock') {
             return Player::PLAYER_2;
-        } else if ($player1 === 'paper' && $player2 === 'scissors') {
+        } else if ($player1->getValue() === 'paper' && $player2->getValue() === 'scissors') {
             return Player::PLAYER_2;
-        } else if ($player1 === 'paper' && $player2 === 'rock') {
+        } else if ($player1->getValue() === 'paper' && $player2->getValue() === 'rock') {
             return Player::PLAYER_1;
-        } else if ($player1 === 'rock' && $player2 === 'paper') {
+        } else if ($player1->getValue() === 'rock' && $player2->getValue() === 'paper') {
             return Player::PLAYER_2;
-        } else if ($player1 === 'rock' && $player2 === 'scissors') {
+        } else if ($player1->getValue() === 'rock' && $player2->getValue() === 'scissors') {
             return Player::PLAYER_1;
         }
 
