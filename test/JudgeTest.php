@@ -80,6 +80,8 @@ class Judge
             return Player::PLAYER_2;
         } else if ($player1 === 'paper' && $player2 === 'scissors') {
             return Player::PLAYER_2;
+        } else if ($player1 === 'paper' && $player2 === 'rock') {
+            return Player::PLAYER_1;
         }
     }
 }
