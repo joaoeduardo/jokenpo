@@ -8,81 +8,108 @@ class JudgeTest extends TestCase
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::rock(), Option::rock());
+        $winner = $judge
+            ->playerOneChose(Option::rock())
+            ->playerTwoChose(Option::rock())
+            ->whoWins();
 
-        $this->assertEquals(Player::NONE, $winner);
+        $this->assertEquals(null, $winner);
     }
 
     public function testPaperTieWithPaper()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::paper(), Option::paper());
+        $winner = $judge
+            ->playerOneChose(Option::paper())
+            ->playerTwoChose(Option::paper())
+            ->whoWins();
 
-        $this->assertEquals(Player::NONE, $winner);
+        $this->assertEquals(null, $winner);
     }
 
     public function testScissorsTieWithScissors()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::scissors(), Option::scissors());
+        $winner = $judge
+            ->playerOneChose(Option::scissors())
+            ->playerTwoChose(Option::scissors())
+            ->whoWins();
 
-        $this->assertEquals(Player::NONE, $winner);
+        $this->assertEquals(null, $winner);
     }
 
     public function testScissorsWinsPaper()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::scissors(), Option::paper());
+        $winner = $judge
+            ->playerOneChose(Option::scissors())
+            ->playerTwoChose(Option::paper())
+            ->whoWins();
 
-        $this->assertEquals(Player::PLAYER_1, $winner);
+        $this->assertEquals(Option::scissors(), $winner);
     }
 
     public function testScissorsLosesRock()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::scissors(), Option::rock());
+        $winner = $judge
+            ->playerOneChose(Option::scissors())
+            ->playerTwoChose(Option::rock())
+            ->whoWins();
 
-        $this->assertEquals(Player::PLAYER_2, $winner);
+        $this->assertEquals(Option::rock(), $winner);
     }
 
     public function testPaperLosesScissors()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::paper(), Option::scissors());
+        $winner = $judge
+            ->playerOneChose(Option::paper())
+            ->playerTwoChose(Option::scissors())
+            ->whoWins();
 
-        $this->assertEquals(Player::PLAYER_2, $winner);
+        $this->assertEquals(Option::scissors(), $winner);
     }
 
     public function testPaperWinsRock()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::paper(), Option::rock());
+        $winner = $judge
+            ->playerOneChose(Option::paper())
+            ->playerTwoChose(Option::rock())
+            ->whoWins();
 
-        $this->assertEquals(Player::PLAYER_1, $winner);
+        $this->assertEquals(Option::paper(), $winner);
     }
 
     public function testRockLosesPaper()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::rock(), Option::paper());
+        $winner = $judge
+            ->playerOneChose(Option::rock())
+            ->playerTwoChose(Option::paper())
+            ->whoWins();
 
-        $this->assertEquals(Player::PLAYER_2, $winner);
+        $this->assertEquals(Option::paper(), $winner);
     }
 
     public function testRockWinsScissors()
     {
         $judge = new Judge();
 
-        $winner = $judge->whoWin(Option::rock(), Option::scissors());
+        $winner = $judge
+            ->playerOneChose(Option::rock())
+            ->playerTwoChose(Option::scissors())
+            ->whoWins();
 
-        $this->assertEquals(Player::PLAYER_1, $winner);
+        $this->assertEquals(Option::rock(), $winner);
     }
 
     public function testNewApi()
