@@ -84,6 +84,18 @@ class JudgeTest extends TestCase
 
         $this->assertEquals(Player::PLAYER_1, $winner);
     }
+
+    public function testNewApi()
+    {
+        $judge = new Judge();
+
+        $winner = $judge
+            ->playerOneChose(Option::paper())
+            ->playerTwoChose(Option::rock())
+            ->whoWins();
+
+        $this->assertEquals(Option::paper(), $winner);
+    }
 }
 
 class Judge
