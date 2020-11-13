@@ -177,32 +177,6 @@ class Judge
 
         return null;
     }
-
-    public function whoWin(Option $player1, Option $player2): int
-    {
-        if ($player1->getValue() === 'scissors' && $player2->getValue() === 'paper') {
-            return Player::PLAYER_1;
-        } else if ($player1->getValue() === 'scissors' && $player2->getValue() === 'rock') {
-            return Player::PLAYER_2;
-        } else if ($player1->getValue() === 'paper' && $player2->getValue() === 'scissors') {
-            return Player::PLAYER_2;
-        } else if ($player1->getValue() === 'paper' && $player2->getValue() === 'rock') {
-            return Player::PLAYER_1;
-        } else if ($player1->getValue() === 'rock' && $player2->getValue() === 'paper') {
-            return Player::PLAYER_2;
-        } else if ($player1->getValue() === 'rock' && $player2->getValue() === 'scissors') {
-            return Player::PLAYER_1;
-        }
-
-        return Player::NONE;
-    }
-}
-
-class Player
-{
-    const NONE = 0;
-    const PLAYER_1 = 1;
-    const PLAYER_2 = 2;
 }
 
 class Option
@@ -227,10 +201,5 @@ class Option
     public static function scissors()
     {
         return new self('scissors');
-    }
-
-    public function getValue(): string
-    {
-        return $this->value;
     }
 }
